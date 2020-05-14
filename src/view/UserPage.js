@@ -1,23 +1,20 @@
-import React, {Component} from "react";
-
+import React from "react";
 import TabNavigator from "../components/TabNavigator";
+import ProxyMode from "../utils/Route";
 
-class UserPage extends Component {
-
-    click() {
-    }
-
-    render() {
-        return (
-            <div>
-                <div>UserPage</div>
-                <button onClick={this.click.bind(this)}>
-                    关于我
-                </button>
-                <TabNavigator/>
-            </div>
-        )
-    }
+function UserPage() {
+    const proxyMode = ProxyMode();
+    return (
+        <div>
+            <div>UserPage</div>
+            <button onClick={() => {
+                proxyMode.push('/');
+            }}>
+                路由跳转demo
+            </button>
+            <TabNavigator/>
+        </div>
+    )
 }
 
 export default UserPage;

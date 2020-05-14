@@ -5,28 +5,30 @@ import HomePage from "../view/HomePage";
 import LoginPage from "../view/LoginPage";
 import RegisterPage from "../view/RegisterPage";
 import UserPage from "../view/UserPage";
-import "../assets/style/style.css";
 
-const Index = () =>
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/">
-                <HomePage/>
-            </Route>
-            <Route path="/about">
-                <AboutPage/>
-            </Route>
-            <Route path="/user">
-                <UserPage/>
-            </Route>
-            <Route path="/register">
-                <RegisterPage/>
-            </Route>
-            <Route path="/login">
-                <LoginPage/>
-            </Route>
-            <Redirect to="/"/>
-        </Switch>
-    </BrowserRouter>
+function Index() {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/">
+                    <HomePage/>
+                </Route>
+                <Route path="/about">
+                    <AboutPage/>
+                </Route>
+                <Route path="/user">
+                    <UserPage/>
+                </Route>
+                <Route path="/register">
+                    <RegisterPage/>
+                </Route>
+                <Route path="/login">
+                    <LoginPage/>
+                </Route>
+                <Redirect to="/"/>
+            </Switch>
+        </BrowserRouter>
+    )
+}
 
 export default Index;
